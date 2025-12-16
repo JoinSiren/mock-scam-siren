@@ -382,48 +382,6 @@ function MockScamTrainer() {
     console.log('🎬 Scenario started:', SCENARIO_TREE.startNodeId);
   };
 
-  // Handle video playback
-  useEffect(() => {
-    if (currentNode) {
-      // Check if this is a number input node
-      if (currentNode.type === 'numberInput') {
-        setShowNumberInput(true);
-        setShowChoices(false);
-        setIsVideoPlaying(false);
-        // If there's a video, play it first
-        if (currentNode.videoUrl && videoRef.current && hasUserGesture.current) {
-          setIsVideoPlaying(true);
-          setShowNumberInput(false);
-          videoRef.current.currentTime = 0;
-          const playPromise = videoRef.current.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(error => {
-              console.error('Video playback failed:', error);
-              handleNumberInputVideoEnd();
-            });
-          }
-        }
-      } else if (currentNode.videoUrl && videoRef.current && hasUserGesture.current) {
-        setIsVideoPlaying(true);
-        setShowChoices(false);
-        setShowNumberInput(false);
-        
-        // Reset video to start
-        videoRef.current.currentTime = 0;
-        
-        // Play video with error handling
-        const playPromise = videoRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(error => {
-            console.error('Video playback failed:', error);
-            // If autoplay fails, show choices immediately
-            handleVideoEnd();
-          });
-        }
-      }
-    }
-  }, [currentNodeId, currentNode, handleVideoEnd, handleNumberInputVideoEnd]);
-
   // Download user path as JSON
   const downloadLog = useCallback(() => {
     const node = currentNodeId ? SCENARIO_TREE.nodes[currentNodeId] : null;
@@ -480,6 +438,48 @@ function MockScamTrainer() {
     setIsVideoPlaying(false);
     setShowNumberInput(true);
   }, [currentNodeId]);
+
+  // Handle video playback
+  useEffect(() => {
+    if (currentNode) {
+      // Check if this is a number input node
+      if (currentNode.type === 'numberInput') {
+        setShowNumberInput(true);
+        setShowChoices(false);
+        setIsVideoPlaying(false);
+        // If there's a video, play it first
+        if (currentNode.videoUrl && videoRef.current && hasUserGesture.current) {
+          setIsVideoPlaying(true);
+          setShowNumberInput(false);
+          videoRef.current.currentTime = 0;
+          const playPromise = videoRef.current.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.error('Video playback failed:', error);
+              handleNumberInputVideoEnd();
+            });
+          }
+        }
+      } else if (currentNode.videoUrl && videoRef.current && hasUserGesture.current) {
+        setIsVideoPlaying(true);
+        setShowChoices(false);
+        setShowNumberInput(false);
+        
+        // Reset video to start
+        videoRef.current.currentTime = 0;
+        
+        // Play video with error handling
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.error('Video playback failed:', error);
+            // If autoplay fails, show choices immediately
+            handleVideoEnd();
+          });
+        }
+      }
+    }
+  }, [currentNodeId, currentNode, handleVideoEnd, handleNumberInputVideoEnd]);
 
   // Handle number input submit
   const handleNumberSubmit = () => {
