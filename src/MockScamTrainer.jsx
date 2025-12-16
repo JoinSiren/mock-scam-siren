@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 /**
  * ═══════════════════════════════════════════════════════════════════════
@@ -359,6 +359,7 @@ function MockScamTrainer() {
   // State management
   const [started, setStarted] = useState(false);
   const [currentNodeId, setCurrentNodeId] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [showChoices, setShowChoices] = useState(false);
   const [path, setPath] = useState([]);
@@ -421,36 +422,64 @@ function MockScamTrainer() {
         }
       }
     }
-  }, [currentNodeId, currentNode]);
+  }, [currentNodeId, currentNode, handleVideoEnd, handleNumberInputVideoEnd]);
+
+  // Download user path as JSON
+  const downloadLog = useCallback(() => {
+    const node = currentNodeId ? SCENARIO_TREE.nodes[currentNodeId] : null;
+    const log = {
+      timestamp: new Date().toISOString(),
+      path: path,
+      outcome: node?.outcome || 'Unknown',
+      nodeDetails: path.map(nodeId => ({
+        id: nodeId,
+        title: SCENARIO_TREE.nodes[nodeId]?.title
+      }))
+    };
+    
+    console.log('📊 User Path Log:', log);
+    
+    // Create downloadable JSON
+    const dataStr = JSON.stringify(log, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `scam-training-log-${Date.now()}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }, [currentNodeId, path]);
 
   // Handle video end
-  function handleVideoEnd() {
-    console.log('📹 Video ended for node:', currentNode?.id);
+  const handleVideoEnd = useCallback(() => {
+    const node = currentNodeId ? SCENARIO_TREE.nodes[currentNodeId] : null;
+    console.log('📹 Video ended for node:', node?.id);
     setIsVideoPlaying(false);
     
     // Check if this is a number input node
-    if (currentNode?.type === 'numberInput') {
+    if (node?.type === 'numberInput') {
       setShowNumberInput(true);
       return;
     }
     
     // Check if this is a terminal node (has outcome or both yes/no are null)
-    if (currentNode.outcome || (currentNode.yes === null && currentNode.no === null)) {
-      const finalOutcome = currentNode.outcome || 'Safe';
+    if (node?.outcome || (node?.yes === null && node?.no === null)) {
+      const finalOutcome = node?.outcome || 'Safe';
       setOutcome(finalOutcome);
       console.log('🏁 Reached outcome:', finalOutcome);
       downloadLog();
     } else {
       setShowChoices(true);
     }
-  };
+  }, [currentNodeId, downloadLog]);
 
   // Handle number input video end
-  function handleNumberInputVideoEnd() {
-    console.log('📹 Number input video ended for node:', currentNode?.id);
+  const handleNumberInputVideoEnd = useCallback(() => {
+    const node = currentNodeId ? SCENARIO_TREE.nodes[currentNodeId] : null;
+    console.log('📹 Number input video ended for node:', node?.id);
     setIsVideoPlaying(false);
     setShowNumberInput(true);
-  };
+  }, [currentNodeId]);
 
   // Handle number input submit
   const handleNumberSubmit = () => {
@@ -520,30 +549,6 @@ function MockScamTrainer() {
     }
   };
 
-  // Download user path as JSON
-  const downloadLog = () => {
-    const log = {
-      timestamp: new Date().toISOString(),
-      path: path,
-      outcome: currentNode?.outcome || 'Unknown',
-      nodeDetails: path.map(nodeId => ({
-        id: nodeId,
-        title: SCENARIO_TREE.nodes[nodeId]?.title
-      }))
-    };
-    
-    console.log('📊 User Path Log:', log);
-    
-    // Create downloadable JSON
-    const dataStr = JSON.stringify(log, null, 2);
-    const dataBlob = new Blob([dataStr], { type: 'application/json' });
-    const url = URL.createObjectURL(dataBlob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `scam-training-log-${Date.now()}.json`;
-    link.click();
-    URL.revokeObjectURL(url);
-  };
 
   // Reset to start
   const handleReset = () => {
@@ -615,7 +620,7 @@ function MockScamTrainer() {
             />
             <h1 style={styles.startTitle}>Investment Mock Scam </h1>
             <p style={styles.startSubtitle}>
-              Created by <a href="https://joinsiren.com" target="_blank" style={{ textDecoration: 'underline', color: '#64748b'}}>Siren</a>
+              Created by <a href="https://joinsiren.com" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', color: '#64748b'}}>Siren</a>
             </p>
             <button 
               onClick={handleStart}
