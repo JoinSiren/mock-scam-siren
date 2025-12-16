@@ -35,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "packageManager": "yarn@4.5.0",
+  "devDependencies": {
+    "typescript": "^5.9.3"
   }
 }
