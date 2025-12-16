@@ -1,6 +1,6 @@
 name = "mock-scam-trainer"
 compatibility_date = "2025-12-16"
 
-[site]
-bucket = "./build"
+[assets]
+directory = "./build"
 
