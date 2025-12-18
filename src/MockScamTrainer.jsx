@@ -840,6 +840,7 @@ const styles = {
     textOverflow: 'ellipsis'
   },
   startScreen: {
+    backgroundSize: 'cover',
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
