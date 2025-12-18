@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MockScamTrainer />} />
+      
         <Route path="/mock-scam" element={<MockScamTrainer />} />
         <Route path="/InvestmentScam" element={<MockScamTrainer />} />
       </Routes>
