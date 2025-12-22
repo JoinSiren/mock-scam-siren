@@ -7,7 +7,7 @@ export default function App() {
       <Routes> 
         <Route path="/" element={<MockScamTrainer />} />
         <Route path="/InvestmentScam" element={<MockScamTrainer />} />
-        
+        <Route path="*" element={<MockScamTrainer />} />
       </Routes>
     </div>
   ); 
