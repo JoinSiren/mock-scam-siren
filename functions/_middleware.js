@@ -6,9 +6,9 @@ export async function onRequest(context) {
     return context.next();
   }
   
-  // For all other routes (SPA routes), rewrite to index.html
+  // For all other routes (SPA routes), rewrite to the SPA fallback
   return context.next({
-    rewrite: new URL('/index.html', url.origin)
+    rewrite: new URL('/200.html', url.origin)
   });
 }
 
