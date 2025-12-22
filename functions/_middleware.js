@@ -6,6 +6,11 @@ export async function onRequest(context) {
     return context.next();
   }
   
+  // Avoid rewriting the SPA fallback itself to prevent redirect loops
+  if (url.pathname === '/200.html' || url.pathname === '/200') {
+    return context.next();
+  }
+
   // For all other routes (SPA routes), rewrite to the SPA fallback
   return context.next({
     rewrite: new URL('/200.html', url.origin)
