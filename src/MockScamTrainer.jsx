@@ -690,7 +690,7 @@ function MockScamTrainer() {
                       backgroundColor: currentNode.outcome === 'Scammed' ? 'rgb(87, 8, 17)' : currentNode.outcome === 'Safe' ? 'rgb(4, 60, 144)' : styles.submitButton.backgroundColor
                     }}
                   >
-                    Protect yourself from Scams
+                    Get Early Access to Siren
                   </button>
                     <div>  
                   </div>
