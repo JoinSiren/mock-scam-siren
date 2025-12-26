@@ -10,8 +10,8 @@ export default function App() {
     <div className="App">
       <Routes> 
         <Route path="/" element={<MockScamTrainer />} />
-        <Route path="/InvestmentScam" element={<MockScamTrainer />} />
-        <Route path="/DigitalArrest" element={<DigitalArrest />} />
+        <Route path="/investmentscam" element={<MockScamTrainer />} />
+        <Route path="/digitalarrest" element={<DigitalArrest />} />
         <Route path="*" element={<MockScamTrainer />} />
       </Routes>
     </div>
