@@ -9,7 +9,7 @@ export async function onRequest(context) {
     const res = await context.next();
     if (res.status !== 404) return res;
   
-    url.pathname = "/index.html";
+    url.pathname = "/200.html";
     return context.env.ASSETS.fetch(new Request(url.toString(), context.request));
   }
   
