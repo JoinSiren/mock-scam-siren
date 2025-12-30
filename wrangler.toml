@@ -1,7 +1,6 @@
 name = "mock-scam-siren"
-main = "src/worker.js"
 compatibility_date = "2025-12-26"
 
 [assets]
 directory = "./build"
-binding = "ASSETS"
+
