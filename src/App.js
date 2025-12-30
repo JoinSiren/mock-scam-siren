@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import MockScamTrainer from "./MockScamTrainer";
 import DigitalArrest from "./DigitalArrest.jsx";
 import "./App.css";

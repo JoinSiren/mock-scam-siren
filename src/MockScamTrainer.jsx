@@ -106,7 +106,7 @@ const SCENARIO_TREE = {
       yes: "q6",      // If YES → go to q6
       no: "q7",       // If NO → go to q7
       yesLabel: "Haan",  // Custom label for yes button (optional)
-      noLabel: "Nahi",    // Custom label for no button (optional)
+      noLabel: "Nahii",    // Custom label for no button (optional)
       type: "numberInput",  // Required: marks this as a number input node
       placeholder: "Enter valid lost amount",  // Optional: placeholder text
       submitLabel: "Submit",  // Optional: submit button label
@@ -701,7 +701,7 @@ function MockScamTrainer() {
               {/* Video overlay during playback */}
               {/* {isVideoPlaying && (
                 <div style={styles.videoOverlay}>
-                  <div style={styles.playingIndicator}>▶ Playing...</div>
+                  <div styl={styles.playingIndicator}>▶ Playing...</div>
                 </div>
               )} */}
             </div>
