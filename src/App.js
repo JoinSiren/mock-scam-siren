@@ -9,7 +9,7 @@ export default function App() {
     
     <div className="App">
       <Routes> 
-        <Route path="/" element={<MockScamTrainer />} />
+        <Route path="/" element={<Navigate to="/digitalarrest" replace />} />
         <Route path="/investmentscam" element={<MockScamTrainer />} />
         <Route path="/digitalarrest" element={<DigitalArrest />} />
         <Route path="*" element={<MockScamTrainer />} />
