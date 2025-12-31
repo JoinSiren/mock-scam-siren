@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-function IframeView({id="iFrame1"}) {
+function IframeView() {
 function resizeIFrameToFitContent( iFrame ) {
     iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
     iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
@@ -13,6 +13,7 @@ useEffect(() => {
   return (
     <div style={{ width: "100%" }}>
       <iframe
+        id={"iFrame1"}
         src={"https://digital-2we.pages.dev"}
         title={'digitalarrest'}
         loading="mock"
