@@ -1,13 +1,12 @@
 import React from "react";
 
 function IframeView() {
+
   return (
     <div style={{ width: "100%" }}>
       <iframe
-        src={"https://digital.bitter-meadow-7522.workers.dev"}
-        title={
-          'digitalarrest'
-        }
+        src={"https://digital-2we.pages.dev"}
+        title={'digitalarrest'}
         loading="mock"
         allowFullScreen
       />
