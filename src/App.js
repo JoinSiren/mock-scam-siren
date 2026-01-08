@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import MockScamTrainer from "./MockScamTrainer";
-import DigitalArrest from "./DigitalArrest.jsx";
+import MockScamTrainerDA from "./MockScamTrainerDA";
 import "./App.css";
 
 export default function App() {
@@ -11,7 +11,8 @@ export default function App() {
       <Routes> 
         <Route path="/" element={<Navigate to="/digitalarrest" replace />} />
         <Route path="/investmentscam" element={<MockScamTrainer />} />
-        <Route path="/digitalarrest" element={<DigitalArrest />} />
+        <Route path="/digitalarrest" element={<MockScamTrainerDA />} />
+      
         <Route path="*" element={<MockScamTrainer />} />
       </Routes>
     </div>
