@@ -56,7 +56,7 @@ const SCENARIO_TREE = {
       id: "q2",
       title: "Knowledge / Losses",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/Knowledge%3Aloss.mp4",
-      prompt: "Kyu nahi kar rahe hai?",
+      prompt: "App trading kyu nahi kar rahe hai?",
       yes: "q5",      // If YES → go to q4
       no: "q4",       // If NO → go to q5
       yesLabel: "Knowledge kam hai",  // Custom label for yes button (optional)
@@ -71,7 +71,7 @@ const SCENARIO_TREE = {
       id: "q3",
       title: "Approx capital",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/Approx+capital.mp4",
-      prompt: " App kitna capital use karte hain?",
+      prompt: " App kitna capital invest kar rahe hain?",
       yes: "",    // If YES → go to q8 
       no: "",     // If NO → go to q8 
       yesLabel: "",  // Custom label for yes button (optional)
@@ -102,13 +102,13 @@ const SCENARIO_TREE = {
       id: "q4",
       title: "How much",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/How+much.mp4",
-      prompt: "Apka kitna loss hua tha?",
+      prompt: "Apka kitna money loss hua tha?",
       yes: "q6",      // If YES → go to q6
       no: "q7",       // If NO → go to q7
       yesLabel: "Haan",  // Custom label for yes button (optional)
       noLabel: "Nahi",    // Custom label for no button (optional)
       type: "numberInput",  // Required: marks this as a number input node
-      placeholder: "Enter valid lost amount",  // Optional: placeholder text
+      placeholder: "Enter Amount",  // Optional: placeholder text
       submitLabel: "Submit",  // Optional: submit button label
       min: 0,  // Optional: minimum value
       max: 100000,  // Op tional: maximum value
@@ -133,7 +133,7 @@ const SCENARIO_TREE = {
       id: "q5",
       title: "First time",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/First+Time+.mp4",
-      prompt: "Kya aap register krna chahegein?",
+      prompt: "Kya aap register karna chahenge?",
       yes: "q8",      // If YES → go to q8
       no: "q14",      // If NO → go to q14
       yesLabel: "Haan",  // Custom label for yes button (optional)
@@ -178,7 +178,7 @@ const SCENARIO_TREE = {
       id: "q8",
       title: "Registration",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/Register.mp4",
-      prompt: "Kya aap register krna chahegein?",
+      prompt: "Kya aap register karna chahenge?",
       yes: "q10",    // If YES → go to q10
       no: "q11",     // If NO → go to q11
       yesLabel: "Haan",  // Custom label for yes button (optional)
@@ -190,7 +190,7 @@ const SCENARIO_TREE = {
       id: "q9",
       title: "Previous losses",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/Precious+Loss.mp4",
-      prompt: "Kya aap register krna chahegein?",
+      prompt: "Kya aap register karna chahenge?",
       yes: "q8",     // If YES → go to q8
       no: "q13",     // If NO → go to q13
       yesLabel: "Haan",  // Custom label for yes button (optional)
@@ -201,7 +201,7 @@ const SCENARIO_TREE = {
       id: "q10",
       title: "Fee",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/Fee.mp4",
-      prompt: "Kya aap fee pay krna chahegein?",
+      prompt: "Kya aap fee pay karna chahenge?",
       yes: "q12",    // If YES → go to q12
       no: "q13",     // If NO → go to q13
       yesLabel: "Haan",  // Custom label for yes button (optional)
@@ -212,7 +212,7 @@ const SCENARIO_TREE = {
       id: "q11",
       title: "Less amount",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/Very+less+amount.mp4",
-      prompt: "Kya ab aap register krna chahegein??",
+      prompt: "Kya ab aap register karna chahenge?",
       yes: "q10",    // If YES → go to q10
       no: "q13",     // If NO → go to q13
       yesLabel: "Haan",  // Custom label for yes button (optional)
@@ -223,7 +223,7 @@ const SCENARIO_TREE = {
       id: "q12",
       title: "Share info",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/Share+info.mp4",
-      prompt: "Kya aap information share krna chahegein?",
+      prompt: "Kya aap information share karna chahenge?",
       yes: "q15",    // If YES → go to q14
       no: "q14",     // If NO → go to q15
       yesLabel: "Haan",  // Custom label for yes button (optional)
@@ -234,7 +234,7 @@ const SCENARIO_TREE = {
       id: "q13",
       title: "Basic details",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Investment+Scam+Mock/Basic+Details.mp4",
-      prompt: "kya aap details share krna chahegein?",
+      prompt: "kya aap details share krna chahenge?",
       yes: "q15",    // If YES → go to q14
       no: "q14",     // If NO → go to q15
       yesLabel: "Haan",  // Custom label for yes button (optional)
