@@ -41,7 +41,7 @@ const SCENARIO_TREE = {
       title: "main message",
      videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/main+message+plus+harmful.MP4",
       
-      prompt: "Kya aap RTO challan kholengein?",
+      prompt: "Kya aap RTO challan app kholengein?",
       yes: "q2",      // If YES → go to q3
       no: "q3",       // If NO → go to q2
       yesLabel: "Haan",  // Custom label for yes button (optional)
@@ -511,7 +511,7 @@ function MockScamTrainer() {
         {/* Breadcrumb */}
         {started && !outcome && (
           <div style={styles.breadcrumb}>
-            MOCK SCAM - Investment Scam
+            MOCK SCAM - RTO Challan APK
           </div>
         )}
 

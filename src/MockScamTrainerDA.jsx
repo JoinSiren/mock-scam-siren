@@ -551,7 +551,7 @@ function MockScamTrainer() {
         {/* Breadcrumb */}
         {started && !outcome && (
           <div style={styles.breadcrumb}>
-            MOCK SCAM - Investment Scam
+            MOCK SCAM - Digital Arrest
           </div>
         )}
 
