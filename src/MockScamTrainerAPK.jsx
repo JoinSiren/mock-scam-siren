@@ -154,7 +154,7 @@ const SCENARIO_TREE = {
       id: "q7",
       title: "Scammed",
       videoUrl: "",
-      imageUrl:"https://res.cloudinary.com/dndqxjnvx/image/upload/v1763713722/new_safe_card_rb5rju.jpg",
+      imageUrl:"https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/new+scam+card.jpg",
       prompt: "",
       yes: null,              // No next question
       no: null,               // No next question
@@ -168,7 +168,7 @@ const SCENARIO_TREE = {
       id: "q8",
       title: "Safe",
       videoUrl: "",
-      imageUrl:"https://res.cloudinary.com/dndqxjnvx/image/upload/v1763713722/new_scam_card_k0safu.jpg",
+      imageUrl:"https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/new+safe+card.jpg",
       prompt: "",
       yes: null,
       no: null,
