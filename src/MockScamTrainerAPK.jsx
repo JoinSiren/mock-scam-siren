@@ -81,7 +81,7 @@ const SCENARIO_TREE = {
       title: "Open app plus first permission",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/Open+plus+1st+permission.MP4",
       prompt: "Kya aap yeh permission dengein",
-      yes: "q7",      // If YES → go to q8
+      yes: "q8",      // If YES → go to q8
       no: "q5",      // If NO → go to q14
       yesLabel: "Haan",  // Custom label for yes button (optional)
       noLabel: "Nahi",    // Custom label for no button (optional)
@@ -93,7 +93,7 @@ const SCENARIO_TREE = {
       title: "Second Permission",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/Permission+2.MP4",
       prompt: "Kya aap yeh permission dengein",
-      yes: "q7",   // If YES → go to q8
+      yes: "q8",   // If YES → go to q8
       no: "q6",    // If NO → go to q9
       yesLabel: "Haan",  // Custom label for yes button (optional)
       noLabel: "Nahi",    // Custom label for no button (optional)
@@ -104,8 +104,8 @@ const SCENARIO_TREE = {
       title: "Third Permission",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/Permission+3.MP4",
       prompt: "Kya aap yeh permission dengein?",
-      yes: "q7",   // If YES → go to q8
-      no: "q8",    // If NO → go to q9
+      yes: "q8",   // If YES → go to q8
+      no: "q7",    // If NO → go to q9
       yesLabel: "Haan",  // Custom label for yes button (optional)
       noLabel: "Nahi",    // Custom label for no button (optional)
       outcome: null
@@ -131,7 +131,7 @@ const SCENARIO_TREE = {
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/Sms+Threat.MP4",
       prompt: "Kya aap apna challan check karna chahengein?",
       yes: "q11",    // If YES → go to q12
-      no: "q8",     // If NO → go to q13
+      no: "q7",     // If NO → go to q13
       yesLabel: "Haan",  // Custom label for yes button (optional)
       noLabel: "Nahi",    // Custom label for no button (optional)
       outcome: null
@@ -140,9 +140,10 @@ const SCENARIO_TREE = {
       id: "q11",
       title: "Check challan",
       videoUrl: "https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/Check+Challan.MP4",
+
       prompt: "Kya aap ab install karengein?",
       yes: "q4",    // If YES → go to q10
-      no: "q8",     // If NO → go to q13
+      no: "q7",     // If NO → go to q13
       yesLabel: "Haan",  // Custom label for yes button (optional)
       noLabel: "Nahi",    // Custom label for no button (optional)
       outcome: null
@@ -152,9 +153,9 @@ const SCENARIO_TREE = {
     // ──────────────────────────────────────────────────────────
     q7: {
       id: "q7",
-      title: "Scammed",
+      title: "Safe",
       videoUrl: "",
-      imageUrl:"https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/new+scam+card.jpg",
+      imageUrl:"https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/new+safe+card.jpg",
       prompt: "",
       yes: null,              // No next question
       no: null,               // No next question
@@ -166,9 +167,9 @@ const SCENARIO_TREE = {
     // ──────────────────────────────────────────────────────────
     q8: {
       id: "q8",
-      title: "Safe",
+      title: "Scammed",
       videoUrl: "",
-      imageUrl:"https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/new+safe+card.jpg",
+      imageUrl:"https://s3.ap-south-1.amazonaws.com/cdn.joinsiren.com/mock-videos/Apk+RTO+scam/new+scam+card.jpg",
       prompt: "",
       yes: null,
       no: null,
